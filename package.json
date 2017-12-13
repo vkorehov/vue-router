@@ -1,5 +1,5 @@
 {
-  "name": "vue-router",
+  "name": "vkorehov-vue-router",
   "version": "3.0.1",
   "description": "Official router for Vue.js 2",
   "author": "Evan You",
@@ -9,7 +9,7 @@
   "unpkg": "dist/vue-router.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vuejs/vue-router.git"
+    "url": "https://github.com/vkorehov/vue-router.git"
   },
   "typings": "types/index.d.ts",
   "files": [
