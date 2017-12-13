@@ -15,8 +15,7 @@ export const supportsPushState = inBrowser && (function () {
     return false
   }
 
-  //return window.history && 'pushState' in window.history
-  return false
+  return window.history && 'pushState' in window.history
 })()
 
 // use User Timing api (if present) for more accurate key precision
@@ -45,10 +44,10 @@ export function pushState (url?: string, replace?: boolean) {
   const history = window.history
   try {
     if (replace) {
-      history.replaceState({ key: _key }, '', url)
+      history.replaceState(Object.assign(window.history.state, {key: _key}), '', url)
     } else {
       _key = genKey()
-      history.pushState({ key: _key }, '', url)
+      history.pushState(Object.assign(window.history.state, {key: _key}), '', url)
     }
   } catch (e) {
     window.location[replace ? 'replace' : 'assign'](url)
